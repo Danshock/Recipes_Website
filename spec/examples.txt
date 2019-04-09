@@ -1,0 +1,7 @@
+example_id                        | status | run_time        |
+--------------------------------- | ------ | --------------- |
+./spec/models/recipe_spec.rb[1:2] | passed | 0.00844 seconds |
+./spec/models/recipe_spec.rb[1:4] | passed | 0.00306 seconds |
+./spec/models/recipe_spec.rb[1:5] | passed | 0.00296 seconds |
+./spec/models/recipe_spec.rb[1:6] | passed | 0.00126 seconds |
+./spec/models/recipe_spec.rb[1:7] | passed | 0.00135 seconds |
