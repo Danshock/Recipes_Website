@@ -20,6 +20,7 @@ gem 'devise', '~> 4.6', '>= 4.6.2'
 
 
 
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
@@ -32,6 +33,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rspec-rails', '~> 3.8'
+  gem 'factory_bot_rails'
 end
 
 group :test do
@@ -39,6 +41,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'rspec-rails', '~> 3.8'
+  gem 'factory_bot_rails'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

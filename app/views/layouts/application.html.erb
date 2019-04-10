@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RecipesWebsite</title>
+    <title>Tasty Recipes</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,8 +10,8 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render "layouts/shared-partials/navbar" %>
+    <%= render "layouts/shared-partials/devise-alerts-and-notices" %>
     <%= yield %>
   </body>
 </html>

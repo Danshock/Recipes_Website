@@ -1,7 +1,8 @@
-example_id                        | status | run_time        |
---------------------------------- | ------ | --------------- |
-./spec/models/recipe_spec.rb[1:2] | passed | 0.00844 seconds |
-./spec/models/recipe_spec.rb[1:4] | passed | 0.00306 seconds |
-./spec/models/recipe_spec.rb[1:5] | passed | 0.00296 seconds |
-./spec/models/recipe_spec.rb[1:6] | passed | 0.00126 seconds |
-./spec/models/recipe_spec.rb[1:7] | passed | 0.00135 seconds |
+example_id                        | status  | run_time        |
+--------------------------------- | ------- | --------------- |
+./spec/models/recipe_spec.rb[1:2] | failed  | 0.00433 seconds |
+./spec/models/recipe_spec.rb[1:4] | passed  | 0.00399 seconds |
+./spec/models/recipe_spec.rb[1:5] | passed  | 0.00196 seconds |
+./spec/models/recipe_spec.rb[1:6] | passed  | 0.00194 seconds |
+./spec/models/recipe_spec.rb[1:7] | passed  | 0.01712 seconds |
+./spec/models/user_spec.rb[1:1]   | pending | 0.00001 seconds |

@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   context "valid recipe submissions"
-    it "returns a valid recipe submission" do
-        recipe = Recipe.new(title: "Example Title", description: "Example Description", author: "Example Author")
+    it "returns a valid recipe submission" do      
+        recipe = Recipe.new(title: "Example Title", description: "Example Description", author: "Example User")
         expect(recipe).to be_valid
     end
 
