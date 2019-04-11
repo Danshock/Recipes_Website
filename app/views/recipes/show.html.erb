@@ -2,9 +2,9 @@
 <h4>Posted by: <%= @recipe.user.username.capitalize %></h4>
 <p><%= @recipe.description %></p>
 
-<%= link_to "Back |", root_path %>
+<%= link_to "Back", root_path %>
 
 <% if current_user == @recipe.user || current_user.try(:admin) %>
-  <%= link_to "Edit |", edit_recipe_path(@recipe) %>
+  <%= link_to "Edit", edit_recipe_path(@recipe) %>
   <%= link_to "Delete", recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
