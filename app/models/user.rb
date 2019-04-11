@@ -9,7 +9,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, 
          authentication_keys: [:login]
 
-  validates :username, presence: true, length: { minimum: 2, maximum: 80 }
+  validates :username, presence: true, length: { minimum: 2, maximum: 80 },
+            uniqueness: true
+  validates :email, presence: true, uniqueness: true
 
   # Allow user to login via username or email
   def login
