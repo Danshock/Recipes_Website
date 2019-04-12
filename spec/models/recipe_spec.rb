@@ -2,18 +2,17 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
 
-  before(:all) do
-    @recipe = create(:recipe)
-  end
+  let(:recipe) { create(:recipe) }
 
-  context "valid recipe submissions"
+  context "valid recipe submissions" do
     it "returns a valid recipe submission" do 
-        skip     
-        recipe = Recipe.new(title: "Example Title", description: "Example Description")
+        #skip     
+        # recipe = Recipe.new(title: "Example Title", description: "Example Description")
         expect(recipe).to be_valid
     end
+  end
 
-  context "invalid recipe submissions"
+  context "invalid recipe submissions" do
     it "returns an invalid recipe submission because of missing attributes" do
     	recipe = build(:recipe, title: nil, description: nil, user_id: nil)
     	expect(recipe).to_not be_valid
@@ -28,5 +27,6 @@ RSpec.describe Recipe, type: :model do
     	long_title = "E" * 81
     	recipe = Recipe.new(title: long_title, description: "Example Description")
     	expect(recipe).to_not be_valid
-    end      
+    end
+  end      
 end

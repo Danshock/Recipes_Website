@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   
-  before(:all) do
-  	@user1 = create(:user)
+  before(:each) do
+    @user1 = create(:user)
   end
 
   context "when valid attributes are submitted" do

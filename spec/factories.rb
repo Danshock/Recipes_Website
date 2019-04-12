@@ -16,8 +16,8 @@ FactoryBot.define do
 	end
 
 	factory :recipe do
-		user
 		title "FactoryBot Title"
 		description "FactoryBot Description"
+		user
 	end
 end
