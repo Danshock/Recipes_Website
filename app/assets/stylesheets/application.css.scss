@@ -13,6 +13,17 @@
  *= require_tree .
  *= require_self
  */
-// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// Recipe's images (thumbnail and show)
+
+.recipe {
+	height: 350px;
+	width: 250px;
+}
+
+.recipe-show {
+	height: 475px;
+	width: 325px;
+}

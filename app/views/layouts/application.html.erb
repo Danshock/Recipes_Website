@@ -12,6 +12,8 @@
   <body>
     <%= render "layouts/shared-partials/navbar" %>
     <%= render "layouts/shared-partials/devise-alerts-and-notices" %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

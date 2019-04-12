@@ -1,5 +1,22 @@
-<h1>All Recipes</h1>
+<h1 class="current-category"><%= params[:category] %></h1>
 
-<% @recipes.each do |recipe| %>
-  <h2><%= link_to recipe.title, recipe_path(recipe) %></h2>
+<% if @recipes.count == 0 %>
+
+  <h4>There are no recipes currently in this category</h4>
+
+<% else %>
+  <div class="row">
+    <% @recipes.each do |recipe| %>
+
+      <div class="col-md-3">
+	  	<a href="/recipes/<%= recipe.id %>">
+	  		<%= image_tag recipe.recipe_img.url(:recipe_index), class: "recipe" %>
+	  	</a>
+        <p><%= link_to recipe.title, recipe_path(recipe) %></p>
+
+      </div> <!-- col-md-3 -->
+    <% end %>
+
+  </div> <!-- row -->
+
 <% end %>

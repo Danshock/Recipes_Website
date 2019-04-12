@@ -3,11 +3,21 @@ class RecipesController < ApplicationController
 	before_action :authenticate_user!, except: [:show, :index]
 	
 	def index
-		@recipes = Recipe.all.order("created_at DESC")
+		if params[:category].blank?
+			@recipes = Recipe.all.order("created_at DESC")
 
-		respond_to do |format|
-			format.html 
-			format.json { render json: @recipes }
+			respond_to do |format|
+				format.html 
+				format.json { render json: @recipes }
+			end
+		else
+			@category_id = Category.find_by(name: params[:category]).id
+			@recipes = Recipe.where(:category_id => @category_id).order("created_at DESC")
+
+			respond_to do |format|
+				format.html 
+				format.json { render json: @recipes }
+			end
 		end 
 	end
 
@@ -16,7 +26,8 @@ class RecipesController < ApplicationController
 
 	def new
 		@recipe = current_user.recipes.build
-
+		@categories = Category.all.map{ |c| [c.name, c.id] }
+		
 		respond_to do |format|
 			format.html
 			format.json { render json: @recipe }
@@ -25,6 +36,7 @@ class RecipesController < ApplicationController
 
 	def create
 		@recipe = current_user.recipes.build(recipe_params)
+		@recipe.category_id = params[:category_id]
 		
 	    respond_to do |format|
 		    if @recipe.save
@@ -38,9 +50,12 @@ class RecipesController < ApplicationController
 	end
 
 	def edit
+		@categories = Category.all.map{ |c| [c.name, c.id] }
 	end
 
 	def update
+		@recipe.category_id = params[:category_id]
+		
 		respond_to do |format|
 			if @recipe.update(recipe_params)
 				format.html { redirect_to @recipe, notice: "Recipe was successfully updated." }
@@ -64,7 +79,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:title, :description)
+		params.require(:recipe).permit(:title, :description, :category_id, :recipe_img)
 	end
 
 	def find_recipe

@@ -18,6 +18,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form', '~> 4.1'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 # gem 'devise-guests', '~> 0.7.0'
+gem 'paperclip', '~> 6.1'
+# Rails c not working
+gem 'rb-readline'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

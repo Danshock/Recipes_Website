@@ -1,13 +1,5 @@
 FactoryBot.define do
 
-	# sequence :email do |n|
-	# 	"email#{n}@factory.com"
-	# end
-
-	# sequence :username do |n|
-	# 	"username_#{n}"
-	# end
-
 	factory :user do
 		email "email@factory.com"
 		username "factory_username"
@@ -16,8 +8,14 @@ FactoryBot.define do
 	end
 
 	factory :recipe do
-		title "FactoryBot Title"
-		description "FactoryBot Description"
+		title "FactoryBotTitle"
+		description "FactoryBotDescription"
 		user
+		category
+	end
+
+	factory :category do
+		name "FactoryBotCategoryName"
+		recipe
 	end
 end
