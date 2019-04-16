@@ -1,8 +1,10 @@
 <%= simple_form_for @recipe, :html => { :multipart => true } do |f| %>
+  
   <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
   <%= f.file_field :recipe_img %>
   <%= f.input :title, label: "Recipe Title" %>
   <%= f.input :description %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn btn-custom2" %>
+
 <% end %>

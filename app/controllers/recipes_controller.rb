@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
 	before_action :find_recipe, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!, except: [:show, :index]
+	before_action :authenticate_user!, only: [:new, :edit]
 	
 	def index
 		if params[:category].blank?
@@ -22,6 +22,11 @@ class RecipesController < ApplicationController
 	end
 
 	def show
+		if @recipe.reviews.blank?
+			@average_review = 0
+		else
+			@average_review = @recipe.reviews.average(:rating).round(2)
+		end
 	end
 
 	def new

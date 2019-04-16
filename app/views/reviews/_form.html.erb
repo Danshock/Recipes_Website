@@ -1,0 +1,18 @@
+<%= simple_form_for([@recipe, @recipe.reviews.build])  do |f| %>
+  
+  <div id="rating-form">
+    <label>Rating</label>
+  </div> <!-- rating-form -->
+    
+    <%= f.input :comment %>
+    <%= f.button :submit, class: "btn btn-custom2" %>
+<% end %>
+
+<!-- Script for the 5 star rating -->
+<script>
+	$("#rating-form").raty({
+		path: "/assets/",
+		scoreName: "review[rating]"
+	});
+</script>
+
