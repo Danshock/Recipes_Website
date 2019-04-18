@@ -1,4 +1,12 @@
 FactoryBot.define do
+  factory :direction do
+    step { "MyText" }
+    recipe { nil }
+  end
+  factory :ingredient do
+    name { "MyString" }
+    recipe { nil }
+  end
   factory :review do
     rating { 1 }
     comment { "MyText" }

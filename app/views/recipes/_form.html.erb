@@ -3,8 +3,54 @@
   <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
   <%= f.file_field :recipe_img %>
   <%= f.input :title, label: "Recipe Title" %>
-  <%= f.input :description %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.button :submit, class: "btn btn-custom2" %>
+  <%= f.input :description, :input_html => {:rows => 5} %>
+  
+  
+<div class="row">
+  
+  <!-- Dynamic form for ingredients -->
+  <div class="col-md-6">
+    <h3>Ingredients</h3>
+
+      <div id="tasks">
+    	    <%= f.simple_fields_for :ingredients do |ingredient| %>
+    	      <%= render "ingredient_fields", f: ingredient %>
+        	<% end %>
+
+    	    <div class="links">
+    		      <%= link_to_add_association "Add Ingredient", f, :ingredients, class: "btn-custom" %>
+    	    </div> <!-- links -->
+       </div> <!-- tasks -->
+ </div> <!-- col-md-6 -->
+  
+  <!-- Dynamic form for directions -->
+  <div class="col-md-6">
+    <h3>Method</h3>
+
+      <div id="directions">
+        <%= f.simple_fields_for :directions do |direction| %>
+          <%= render "direction_fields", f: direction %>
+        <% end %>
+
+            <div class="links">
+              <%= link_to_add_association "Add Step", f, :directions, class: "btn-custom" %>
+            </div> <!-- links -->
+
+      </div> <!-- directions -->
+
+  </div> <!-- col-md-6 -->
+
+</div> <!-- row -->
+
+   
+
+
+  <% f.hidden_field :user_id, value: current_user.id %>
+
+  <div class="row">
+    <div class="btn-create-recipe">
+      <%= f.button :submit, class: "btn btn-custom2" %>
+    </div>
+  </div>
 
 <% end %>

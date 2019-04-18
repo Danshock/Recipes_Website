@@ -10,18 +10,14 @@ gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'uglifier', '>= 1.3.0'
-
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-
 gem 'simple_form', '~> 4.1'
 gem 'devise', '~> 4.6', '>= 4.6.2'
-# gem 'devise-guests', '~> 0.7.0'
 gem 'paperclip', '~> 6.1'
-# Rails c not working
-gem 'rb-readline'
-
+gem 'cocoon', '~> 1.2', '>= 1.2.12'
+gem 'rb-readline' # Rails c not working
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do

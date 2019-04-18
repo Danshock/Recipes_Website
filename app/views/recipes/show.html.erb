@@ -40,6 +40,24 @@
 
   	</div> <!-- col-md-4 -->
 
+    <!-- DELETE -->
+    <div class="col-md-8">
+        <div class="reviews">
+          <!-- Reviews & Ratings -->
+          <h1>Reviews</h1>
+          <%= render @recipe.reviews %>
+          
+  
+          <div>
+            <%= link_to "Add Review", new_recipe_review_path(@recipe), class: "btn btn-custom" %>
+          </div>
+
+        </div> <!-- reviews -->
+
+    </div> <!-- col-md-8 -->
+
+
+
   </div> <!-- row -->
 
 <div class="links btn-group">

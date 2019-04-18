@@ -2,6 +2,20 @@ class Recipe < ApplicationRecord
 	belongs_to :user
 	belongs_to :category
 	has_many :reviews
+	has_many :ingredients, inverse_of: :recipe
+	has_many :directions, inverse_of: :recipe
+
+	accepts_nested_attributes_for :ingredients, 
+								  reject_if: :all_blank, 
+								  allow_destroy: true
+
+	# accepts_nested_attributes_for :ingredients,
+	# 							  reject_if: proc { |attributes| attributes["name"].blank? }, 
+	# 							  allow_destroy: true
+
+	accepts_nested_attributes_for :directions,
+								  reject_if: proc { |attributes| attributes["step"].blank? }, 
+								  allow_destroy: true
 
 	validates :title, presence: true, length: { minimum: 2, maximum: 80 }
 	validates :description, presence: true, length: { minimum: 2 }

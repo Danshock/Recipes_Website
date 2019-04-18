@@ -19,6 +19,7 @@
 
 /* Variables, mixins, etc.. */
 
+/* for everything */
 @mixin background-tile {
 	box-sizing: border-box;
 	background-color: #fff;
@@ -27,6 +28,14 @@
 	padding: 1.5em 1.25em;
 }
 
+/* for pictures only */
+@mixin background-tile-pictures {
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px 6px #ccc;
+	padding: 0.5em 0.5em;
+}
 
 /* General styles */
 
@@ -123,6 +132,21 @@ p.alert, p.notice {
 	}	
 }
 
+.btn-create-recipe {
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.add-more-fields {
+	/*margin-top: 20px;*/
+}
+
+.remove-field {
+	padding: 1px 5px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
 .links {
 
 	.btn-custom {
@@ -147,14 +171,14 @@ p.alert, p.notice {
 .recipe {
 	height: 350px;
 	width: 250px;
-	margin-bottom: 40px;
-	@include background-tile;
+	margin-bottom: 10px;
+	@include background-tile-pictures;
 }
 
 .recipe-show {
 	height: 475px;
 	width: 325px;
-	@include background-tile;
+	@include background-tile-pictures;
 }
 
 .recipe-info {
