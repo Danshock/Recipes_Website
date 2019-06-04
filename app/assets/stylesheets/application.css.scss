@@ -278,7 +278,7 @@ p.alert, p.notice {
 }
 
 
-/* Edit Book Form styles */
+/* Edit Recipe Form styles */
 
 .edit-recipe-form {
 
@@ -319,7 +319,7 @@ p.alert, p.notice {
 }
 
 
-/* Signup/Login form styles */
+/* Signup, Login, and Edit form styles */
 
 .signup-form {
 	@include background-tile;
@@ -337,4 +337,17 @@ p.alert, p.notice {
 		margin-top: 0;
 	}
 
+}
+
+.edit-user-form {
+	@include background-tile;
+
+	h2 {
+		margin-top: 0;
+	}
+}
+
+/* Nested Fields Labels */
+label {
+	margin-right: 5px;
 }
