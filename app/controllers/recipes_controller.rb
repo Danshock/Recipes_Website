@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
 	before_action :find_recipe, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, only: [:new, :edit]
+	before_action :find_categories
 	
 	def index
 		if params[:category].blank?
@@ -91,5 +92,9 @@ class RecipesController < ApplicationController
 
 	def find_recipe
 		@recipe = Recipe.find(params[:id])
+	end
+
+	def find_categories
+		@categories = Category.all.map{ |c| [c.name, c.id] }
 	end
 end
