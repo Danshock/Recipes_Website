@@ -5,13 +5,13 @@
     <h2>Forgot your password?</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= f.error_notification %>
+      <%= render "shared/error_messages", object: f.object %>
 
       <div class="form-inputs">
         <%= f.input :email,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email" } %>
+                    input_html: { autocomplete: "email" }, class: "form-control" %>
       </div>
 
       <div class="form-actions">

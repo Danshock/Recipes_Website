@@ -5,10 +5,12 @@
 	<h2>Edit Recipe</h2>
 
 	<%= simple_form_for @recipe, :html => { :multipart => true } do |f| %>
-	  <%= f.select :category_id, @categories %>
-	  <%= f.file_field :recipe_img %>
-	  <%= f.input :title, label: "Recipe Title" %>
-	  <%= f.input :description, :input_html => {:rows => 5} %>
+    <%= render "shared/error_messages", object: f.object %>
+
+	  <%= f.select :category_id, @categories, class: "form-control" %>
+	  <%= f.file_field :recipe_img, class: "form-control" %>
+	  <%= f.input :title, label: "Recipe Title", class: "form-control" %>
+	  <%= f.input :description, :input_html => {:rows => 5}, class: "form-control" %>
 
 <div class="row">
   

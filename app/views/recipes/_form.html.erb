@@ -1,5 +1,5 @@
 <%= simple_form_for @recipe, :html => { :multipart => true } do |f| %>
-  <%= render "shared/error_messages" %>
+  <%= render "shared/error_messages", object: f.object %>
   
   <%= select_tag(:category_id, options_for_select(@categories), class: "form-control", :prompt => "Select a category") %>
 

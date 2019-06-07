@@ -46,7 +46,7 @@ class RecipesController < ApplicationController
 		
 	    respond_to do |format|
 		    if @recipe.save
-			    format.html { redirect_to root_path, notice: "Recipe was successfully created." }
+			    format.html { redirect_to root_path, notice: "The recipe was successfully created." }
 			    format.json { render json: @recipe, status: :created, location: @recipe }
 		    else
 			    format.html { render action: "new" }
@@ -64,7 +64,7 @@ class RecipesController < ApplicationController
 		
 		respond_to do |format|
 			if @recipe.update(recipe_params)
-				format.html { redirect_to @recipe, notice: "Recipe was successfully updated." }
+				format.html { redirect_to @recipe, notice: "The recipe was successfully updated.", class: "form-control" } # EDIT
 				format.json { head :no_content }
 			else
 				format.html { render action: "edit" }

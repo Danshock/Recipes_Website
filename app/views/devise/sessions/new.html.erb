@@ -5,16 +5,17 @@
     <h2>Log in</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
       <div class="form-inputs">
         
         <%= f.input :login, 
                     label: "Email or Username",
                     required: false,
                     autofocus: true,
-                    input_html: { autocomplete: "email or username" } %>
+                    input_html: { autocomplete: "email or username" }, class: "form-control" %>
         <%= f.input :password,
                     required: false,
-                    input_html: { autocomplete: "current-password" } %>
+                    input_html: { autocomplete: "current-password" }, class: "form-cotnrol" %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
