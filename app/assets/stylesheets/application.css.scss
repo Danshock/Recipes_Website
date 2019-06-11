@@ -241,7 +241,7 @@ p.alert, p.notice {
 		font-size: 2em;
 	}
 
-	.review {
+	.review, #ingredient, #direction {
 		border-bottom: 1px solid gainsboro;
 		margin-bottom: 15px;
 		padding-bottom: 10px;
@@ -258,6 +258,15 @@ p.alert, p.notice {
 	}
 
 }
+
+/* Ingredients and Directions */
+
+
+
+
+
+
+
 
 /* New Recipe Form styles */
 

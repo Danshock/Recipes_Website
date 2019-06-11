@@ -30,14 +30,14 @@
     <!-- Ingredients -->
     <div class="col-md-4">
       <div class="reviews">
-        <div id="ingredient">
+        <!-- <div id="ingredient"> -->
           <h2>Ingredients</h2>
             <ul>
               <% @recipe.ingredients.each do |ingredient| %>
-                <li> <%= ingredient.name %> </li>
+                <li id="ingredient"> <%= ingredient.name %> </li>
               <% end %>
             </ul>
-        </div> <!-- ingredient -->
+        <!-- </div> --> <!-- ingredient -->
       </div> <!-- reviews -->
 
     </div> <!-- col-md-5 -->
@@ -45,14 +45,12 @@
    <!-- Diretions -->
     <div class="col-md-8">
       <div class="reviews">
-        <div id="direction">
           <h2>Directions</h2>
             <ul>
               <% @recipe.directions.each do |direction| %>
-                <li> <%= direction.step %> </li>
+                <li id="direction"> <%= direction.step %> </li>
               <% end %>
             </ul>
-        </div> <!-- ingredient -->
       </div> <!-- reviews -->
 
 

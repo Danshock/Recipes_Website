@@ -2,8 +2,8 @@ class Recipe < ApplicationRecord
 	belongs_to :user
 	belongs_to :category
 	has_many :reviews
-	has_many :ingredients, inverse_of: :recipe
-	has_many :directions, inverse_of: :recipe
+	has_many :ingredients, inverse_of: :recipe, dependent: :destroy
+	has_many :directions, inverse_of: :recipe, dependent: :destroy
 
 	accepts_nested_attributes_for :ingredients, 
 								  reject_if: :all_blank, 
