@@ -13,7 +13,7 @@
     	<h1 class="recipe-title"><%= @recipe.title %></h1>
       <h4 class="avg-rating">Average Rating</h4>
       <div class="average-review-rating" data-score="<%= @average_review %>"></div>
-      <span class="number-of-reviews">Based on <%= @recipe.reviews.count %> reviews</span>
+      <span class="number-of-reviews">Based on <%= @recipe.reviews.count %> reviews </span>
       <h4 class="recipe-author"><span>Posted by:</span> <%= @recipe.user.username.capitalize %></h4>
     	<p class="recipe-desc"><%= @recipe.description %></p>
 
@@ -24,41 +24,58 @@
 </div> <!-- row -->
 
   <div class="row">
-  	
-  	<div class="col-md-4">
-        <div class="reviews">
-          <!-- Reviews & Ratings -->
-          <h1>Reviews</h1>
-      		<%= render @recipe.reviews %>
-      		
-  
-          <div>
-            <%= link_to "Add Review", new_recipe_review_path(@recipe), class: "btn btn-custom" %>
-          </div>
 
-        </div> <!-- reviews -->
 
-  	</div> <!-- col-md-4 -->
 
-    <!-- DELETE -->
+    <!-- Ingredients -->
+    <div class="col-md-4">
+      <div class="reviews">
+        <div id="ingredient">
+          <h2>Ingredients</h2>
+            <ul>
+              <% @recipe.ingredients.each do |ingredient| %>
+                <li> <%= ingredient.name %> </li>
+              <% end %>
+            </ul>
+        </div> <!-- ingredient -->
+      </div> <!-- reviews -->
+
+    </div> <!-- col-md-5 -->
+
+   <!-- Diretions -->
     <div class="col-md-8">
-        <div class="reviews">
-          <!-- Reviews & Ratings -->
-          <h1>Reviews</h1>
-          <%= render @recipe.reviews %>
-          
-  
-          <div>
-            <%= link_to "Add Review", new_recipe_review_path(@recipe), class: "btn btn-custom" %>
-          </div>
-
-        </div> <!-- reviews -->
-
-    </div> <!-- col-md-8 -->
+      <div class="reviews">
+        <div id="direction">
+          <h2>Directions</h2>
+            <ul>
+              <% @recipe.directions.each do |direction| %>
+                <li> <%= direction.step %> </li>
+              <% end %>
+            </ul>
+        </div> <!-- ingredient -->
+      </div> <!-- reviews -->
 
 
 
   </div> <!-- row -->
+
+  <div class="row">
+        <!-- Reviews & Ratings -->
+    <div class="col-md-12">
+        <div class="reviews">
+          
+          <h1>Reviews</h1>
+          <%= render @recipe.reviews %>
+          
+          <div>
+            <%= link_to "Add Review", new_recipe_review_path(@recipe), class: "btn btn-custom" %>
+          </div>
+
+        </div> <!-- reviews -->
+
+    </div> <!-- col-md-4 -->
+
+  </div>
 
 <div class="links btn-group">
   <%= link_to "Back", root_path, class: "btn btn-custom" %>
