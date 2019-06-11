@@ -23,9 +23,8 @@
 
 </div> <!-- row -->
 
+  
   <div class="row">
-
-
 
     <!-- Ingredients -->
     <div class="col-md-4">
@@ -46,11 +45,11 @@
     <div class="col-md-8">
       <div class="reviews">
           <h2>Directions</h2>
-            <ul>
+            <ol>
               <% @recipe.directions.each do |direction| %>
                 <li id="direction"> <%= direction.step %> </li>
               <% end %>
-            </ul>
+            </ol>
       </div> <!-- reviews -->
 
 
