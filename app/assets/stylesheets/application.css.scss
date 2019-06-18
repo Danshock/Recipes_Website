@@ -11,6 +11,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require normalize-rails
  *= require_tree .
  *= require_self
  */
@@ -138,15 +139,19 @@ p.alert, p.notice {
   margin-left: 15px;
 }
 
-.add-more-fields {
-	/*margin-top: 20px;*/
-}
-
 
 .remove-field {
+	color: darken(#a94442, 5%);
+	border: 1px solid darken(#a94442, 5%);
 	padding: 1px 5px;
 	margin-top: 5px;
 	margin-bottom: 10px;
+	&:hover {
+		text-decoration: none;
+		background-color: darken(#a94442, 5%);
+		color: #fff;
+		transition: 0.5s;
+	}
 }
 
 .links {
@@ -178,7 +183,7 @@ p.alert, p.notice {
 }
 
 .recipe-show {
-	height: 475px;
+	height: 380px;
 	width: 325px;
 	@include background-tile-pictures;
 }
@@ -259,13 +264,12 @@ p.alert, p.notice {
 
 }
 
-/* Ingredients and Directions */
+/* Remove padding in form cotnrol for 
+consistency in how browsers display the form */
 
-
-
-
-
-
+.form-control {
+	padding: 0;
+}
 
 
 /* New Recipe Form styles */
@@ -361,7 +365,6 @@ p.alert, p.notice {
 label {
 	margin-right: 5px;
 }
-
 
 
 /*flash*/
