@@ -4,14 +4,9 @@ RSpec.describe Recipe, type: :model do
 
   let(:recipe) { create(:recipe) }
 
-  # before(:each) do
-  #   @recipe = create(:recipe)
-  # end
-
-  context "valid recipe submissions" do
+  context "a valid recipe submissions" do
     it "returns a valid recipe submission" do 
         expect(recipe).to be_valid
-      #  expect(@recipe).to be_valid
     end
   end
 
