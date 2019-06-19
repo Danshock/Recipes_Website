@@ -43,7 +43,7 @@ RSpec.configure do |config|
 
 
   
-  # database_cleaner GEM
+  # # database_cleaner GEM
   config.use_transactional_fixtures = false
 
   config.before(:suite) do

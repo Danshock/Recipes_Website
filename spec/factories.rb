@@ -30,7 +30,6 @@ FactoryBot.define do
 	end
 
 	factory :category do
-		name "FactoryBotCategoryName"
-		recipe
+		name "FactoryBotCategoryName"	
 	end
 end
