@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 RSpec.describe Recipe, type: :model do
 
   let(:recipe) { create(:recipe) }

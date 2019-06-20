@@ -20,6 +20,11 @@ RSpec.describe User, type: :model do
   end
 
   context "when an attribute is not unique" do
+    it "has not got a unique username or email" do
+      user2 = build(:user)
+      expect(user2).to_not be_valid
+    end
+
     it "has a unique username" do
     	user2 = build(:user, email: "different_email@example.com")
     	expect(user2).to_not be_valid
@@ -31,7 +36,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context "when there are missing attributes" do
+  context "when attributes are missing " do
     it "is not valid without a username" do
       user2 = build(:user, username: nil)
       expect(user2).to_not be_valid
