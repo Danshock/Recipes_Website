@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'simple_form', '~> 4.1'
-gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'devise', '~> 4.7'
 gem 'paperclip', '~> 6.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.12'
 gem 'rb-readline' # Rails c not working
