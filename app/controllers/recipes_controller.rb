@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
 	before_action :find_recipe, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, only: [:new, :edit]
+	before_action :find_categories
 	
 	def index
 		if params[:category].blank?
@@ -45,7 +46,7 @@ class RecipesController < ApplicationController
 		
 	    respond_to do |format|
 		    if @recipe.save
-			    format.html { redirect_to root_path, notice: "Recipe was successfully created." }
+			    format.html { redirect_to root_path, notice: "The recipe was successfully created." }
 			    format.json { render json: @recipe, status: :created, location: @recipe }
 		    else
 			    format.html { render action: "new" }
@@ -63,7 +64,7 @@ class RecipesController < ApplicationController
 		
 		respond_to do |format|
 			if @recipe.update(recipe_params)
-				format.html { redirect_to @recipe, notice: "Recipe was successfully updated." }
+				format.html { redirect_to @recipe, notice: "The recipe was successfully updated.", class: "form-control" } # EDIT
 				format.json { head :no_content }
 			else
 				format.html { render action: "edit" }
@@ -84,10 +85,16 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:title, :description, :category_id, :recipe_img)
+		params.require(:recipe).permit(:title, :description, :category_id, :recipe_img, 
+									   ingredients_attributes: [:id, :name, :_destroy], 
+									   directions_attributes: [:id, :step, :_destroy])
 	end
 
 	def find_recipe
 		@recipe = Recipe.find(params[:id])
+	end
+
+	def find_categories
+		@categories = Category.all.map{ |c| [c.name, c.id] }
 	end
 end

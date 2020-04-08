@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,6 +11,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require normalize-rails
  *= require_tree .
  *= require_self
  */
@@ -132,6 +134,26 @@ p.alert, p.notice {
 	}	
 }
 
+.btn-create-recipe {
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+
+.remove-field {
+	color: darken(#a94442, 5%);
+	border: 1px solid darken(#a94442, 5%);
+	padding: 1px 5px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	&:hover {
+		text-decoration: none;
+		background-color: darken(#a94442, 5%);
+		color: #fff;
+		transition: 0.5s;
+	}
+}
+
 .links {
 
 	.btn-custom {
@@ -161,7 +183,7 @@ p.alert, p.notice {
 }
 
 .recipe-show {
-	height: 475px;
+	height: 380px;
 	width: 325px;
 	@include background-tile-pictures;
 }
@@ -224,7 +246,7 @@ p.alert, p.notice {
 		font-size: 2em;
 	}
 
-	.review {
+	.review, #ingredient, #direction {
 		border-bottom: 1px solid gainsboro;
 		margin-bottom: 15px;
 		padding-bottom: 10px;
@@ -241,6 +263,14 @@ p.alert, p.notice {
 	}
 
 }
+
+/* Remove padding in form cotnrol for 
+consistency in how browsers display the form */
+
+.form-control {
+	padding: 0;
+}
+
 
 /* New Recipe Form styles */
 
@@ -262,7 +292,7 @@ p.alert, p.notice {
 }
 
 
-/* Edit Book Form styles */
+/* Edit Recipe Form styles */
 
 .edit-recipe-form {
 
@@ -303,7 +333,7 @@ p.alert, p.notice {
 }
 
 
-/* Signup/Login form styles */
+/* Signup, Login, and Edit form styles */
 
 .signup-form {
 	@include background-tile;
@@ -322,3 +352,50 @@ p.alert, p.notice {
 	}
 
 }
+
+.edit-user-form {
+	@include background-tile;
+
+	h2 {
+		margin-top: 0;
+	}
+}
+
+/* Nested Fields Labels */
+label {
+	margin-right: 5px;
+}
+
+
+/*flash*/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+
+
+ 
